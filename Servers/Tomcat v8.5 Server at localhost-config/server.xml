@@ -172,11 +172,12 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="sopping_mall" path="/" reloadable="true" source="org.eclipse.jst.jee.server:sopping_mall"/></Host>
-    	<ResourceLink
+      <Context docBase="sopping_mall" path="/" reloadable="true" source="org.eclipse.jst.jee.server:sopping_mall"/>
+      <ResourceLink
       	global="jndi/mysql"
       	name="jndi/mysql"
       	type="javax.sql.DataSource"/>
+      </Host>
     </Engine>
   </Service>
 </Server>

@@ -14,12 +14,15 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jndi.JndiTemplate;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * shop 과 admin 모두 쓰는 설정파일
  * */
 @Configurable
 @EnableTransactionManagement
-@ComponentScan
+@ComponentScan(basePackages = {"com.home.sopping_mall.model"})
+@Slf4j
 public class RootConfig {
 	/**
 	 * 서버에 설정한 데이터베이스 불러오기
@@ -55,6 +58,7 @@ public class RootConfig {
 		sqlSessionFactoryBean.setConfigLocation(new ClassPathResource("com/home/sopping_mall/mybatis/mybatis-config.xml"));
 		//사용할 DB정보 등록
 		sqlSessionFactoryBean.setDataSource(dataSource());
+		log.debug("DB연결완료");
 		return sqlSessionFactoryBean.getObject();
 	}
 	/**

@@ -8,9 +8,9 @@ import org.springframework.web.servlet.ModelAndView;
 public class MainController {
 	@GetMapping("/main")
 	public ModelAndView getMain() {
-		ModelAndView mainView = new ModelAndView();
-		mainView.setViewName("index");
-		return mainView;
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("user/index");
+		return mav;
 		
 	}
 }

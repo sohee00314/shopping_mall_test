@@ -3,6 +3,16 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+	<typeAliases>
+		<typeAlias type="com.home.mall.domain.TopCategory" alias="TopCategory"/>
+		<typeAlias type="com.home.mall.domain.SubCategory" alias="SubCategory"/>
+		<typeAlias type="com.home.mall.domain.Product" alias="Product"/>
+		<typeAlias type="com.home.mall.domain.ProductSize" alias="ProductSize"/>
+		<typeAlias type="com.home.mall.domain.ProductImg" alias="ProductImg"/>
+		<typeAlias type="com.home.mall.domain.ProductColor" alias="ProductColor"/>
+		<typeAlias type="com.home.mall.domain.Size" alias="Size"/>
+		<typeAlias type="com.home.mall.domain.Color" alias="Color"/>
+	</typeAliases>
   <environments default="development">
     <environment id="development">
       <transactionManager type="JDBC"/>
@@ -12,5 +22,13 @@
     </environment>
   </environments>
   <mappers>
+  	<mapper resource="com/home/mall/mybatis/ProductMapper"/>
+  	<mapper resource="com/home/mall/mybatis/ProductImgMapper"/>
+  	<mapper resource="com/home/mall/mybatis/ProductSizeMapper"/>
+  	<mapper resource="com/home/mall/mybatis/ProductColorMapper"/>
+  	<mapper resource="com/home/mall/mybatis/TopCategoryMapper"/>
+  	<mapper resource="com/home/mall/mybatis/SubCategoryMapper"/>
+  	<mapper resource="com/home/mall/mybatis/ColorMapper"/>
+  	<mapper resource="com/home/mall/mybatis/SizeMapper"/>
   </mappers>
 </configuration>
